@@ -21,7 +21,6 @@ import './index.css';
 const appApi = initApi({
   title: 'Select Ranges',
   version: packageJson.version,
-  appSignature: DEVELOPMENT_APP_SIGNATURE,
 
   button: {
     text: 'Extract Text',
