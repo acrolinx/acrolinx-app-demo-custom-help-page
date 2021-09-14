@@ -33,13 +33,13 @@ const appApi = initApi({
 
 
 function startApp() {
-  let linkElements = document.querySelectorAll('.href')!;
+  let linkElements = document.querySelectorAll('a')!;
   linkElements.forEach((el) => {
     el.addEventListener(('click'), (ev) => {
-      let linkAttribute = el.getAttribute('data-href');
-      if (typeof linkAttribute === "string") {
-        appApi.commands.openWindow(linkAttribute);
-      }
+      ev.preventDefault();
+      ev.stopPropagation();
+      const urlToOpen = el.getAttribute('data-href') as string;
+      appApi.commands.openWindow(urlToOpen);
     });
   })
 }

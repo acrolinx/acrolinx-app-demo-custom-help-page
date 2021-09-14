@@ -11,10 +11,6 @@ server and point the Acrolinx App Configuration to the `index.html` file.
 
 Change the sample links in the index.html file according to your needs.
 
-Link elements should look like the following example to work properly:
-
-```<div class="href" data-href="https://docs.acrolinx.com/coreplatform/latest/en/the-sidebar">Sidebar Help</div>```
-
 If you want to add additional code set up the development as described below.
 
 ## Install Dependencies Using Npm
