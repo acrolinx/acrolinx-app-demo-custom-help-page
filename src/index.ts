@@ -42,6 +42,14 @@ function startApp() {
       appApi.commands.openWindow(urlToOpen);
     });
   })
+
+  let linkDivElements = document.querySelectorAll('.href')!;
+  linkDivElements.forEach((el) => {
+    el.addEventListener(('click'), (ev) => {
+      const urlToOpen = el.getAttribute('data-href') as string;
+      appApi.commands.openWindow(urlToOpen);
+    });
+  })
 }
 
 startApp();
