@@ -9,14 +9,11 @@ This app uses the [Acrolinx App SDK](https://github.com/acrolinx/app-sdk-js).
 The `build` folder contains the ready build Acrolinx App. You can put the content of the `build` folder onto your web
 server and point the Acrolinx App Configuration to the `index.html` file.
 
-Change the links in the index.html file according to your needs.
+Change the sample links in the index.html file according to your needs.
 
-Link elements should look like the following example:
+Link elements should look like the following example to work properly:
 
-```<a href="https://docs.acrolinx.com/coreplatform/latest/en/the-sidebar">Sidebar Help</a>```
-
-The Javascript part of this app overwrites the default event handling for links to use the host integrations
-implementation for opening external links.
+```<div class="href" data-href="https://docs.acrolinx.com/coreplatform/latest/en/the-sidebar">Sidebar Help</div>```
 
 If you want to add additional code set up the development as described below.
 

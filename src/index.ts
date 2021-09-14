@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {DEVELOPMENT_APP_SIGNATURE, initApi, RequiredCommands} from '@acrolinx/app-sdk';
+import {initApi, RequiredCommands} from '@acrolinx/app-sdk';
 import packageJson from '../package.json';
 import './index.css';
 
@@ -33,12 +33,13 @@ const appApi = initApi({
 
 
 function startApp() {
-  let linkElements = document.querySelectorAll('a')!;
+  let linkElements = document.querySelectorAll('.href')!;
   linkElements.forEach((el) => {
     el.addEventListener(('click'), (ev) => {
-      ev.preventDefault();
-      ev.stopPropagation();
-      appApi.commands.openWindow(el.href);
+      let linkAttribute = el.getAttribute('data-href');
+      if (typeof linkAttribute === "string") {
+        appApi.commands.openWindow(linkAttribute);
+      }
     });
   })
 }
