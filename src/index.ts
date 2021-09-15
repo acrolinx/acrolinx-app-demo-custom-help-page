@@ -39,7 +39,7 @@ function startApp() {
     el.addEventListener(('click'), (ev) => {
       ev.preventDefault();
       ev.stopPropagation();
-      console.log('Here ' + el.href);
+      console.log('Here test ' + el.href);
       appApi.commands.openWindow(el.href);
     });
   })
@@ -55,14 +55,14 @@ function startApp() {
   //   });
   // })
 
-  let linkDivElements = document.querySelectorAll('.href')!;
-  linkDivElements.forEach((el) => {
-    el.addEventListener(('click'), (ev) => {
-      const urlToOpen = el.getAttribute('data-href') as string;
-      console.log(urlToOpen);
-      appApi.commands.openWindow(urlToOpen);
-    });
-  })
+  // let linkDivElements = document.querySelectorAll('.href')!;
+  // linkDivElements.forEach((el) => {
+  //   el.addEventListener(('click'), (ev) => {
+  //     const urlToOpen = el.getAttribute('data-href') as string;
+  //     console.log(urlToOpen);
+  //     appApi.commands.openWindow(urlToOpen);
+  //   });
+  // })
 }
 
 startApp();
