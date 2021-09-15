@@ -33,6 +33,17 @@ const appApi = initApi({
 
 
 function startApp() {
+
+  let linkElementsNew = document.querySelectorAll<HTMLLinkElement>('.normal-link')!;
+  linkElementsNew.forEach((el) => {
+    el.addEventListener(('click'), (ev) => {
+      ev.preventDefault();
+      ev.stopPropagation();
+      console.log('Here ' + el.href);
+      appApi.commands.openWindow(el.href);
+    });
+  })
+
   let linkElements = document.querySelectorAll('a')!;
   linkElements.forEach((el) => {
     el.addEventListener(('click'), (ev) => {
