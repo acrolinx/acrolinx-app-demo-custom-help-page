@@ -39,6 +39,7 @@ function startApp() {
       ev.preventDefault();
       ev.stopPropagation();
       const urlToOpen = el.getAttribute('data-href') as string;
+      console.log(urlToOpen);
       appApi.commands.openWindow(urlToOpen);
     });
   })
@@ -47,6 +48,7 @@ function startApp() {
   linkDivElements.forEach((el) => {
     el.addEventListener(('click'), (ev) => {
       const urlToOpen = el.getAttribute('data-href') as string;
+      console.log(urlToOpen);
       appApi.commands.openWindow(urlToOpen);
     });
   })
