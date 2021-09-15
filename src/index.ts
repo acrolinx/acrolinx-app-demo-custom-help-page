@@ -44,16 +44,16 @@ function startApp() {
     });
   })
 
-  let linkElements = document.querySelectorAll('a')!;
-  linkElements.forEach((el) => {
-    el.addEventListener(('click'), (ev) => {
-      ev.preventDefault();
-      ev.stopPropagation();
-      const urlToOpen = el.getAttribute('data-href') as string;
-      console.log(urlToOpen);
-      appApi.commands.openWindow(urlToOpen);
-    });
-  })
+  // let linkElements = document.querySelectorAll('a')!;
+  // linkElements.forEach((el) => {
+  //   el.addEventListener(('click'), (ev) => {
+  //     ev.preventDefault();
+  //     ev.stopPropagation();
+  //     const urlToOpen = el.getAttribute('data-href') as string;
+  //     console.log(urlToOpen);
+  //     appApi.commands.openWindow(urlToOpen);
+  //   });
+  // })
 
   let linkDivElements = document.querySelectorAll('.href')!;
   linkDivElements.forEach((el) => {
