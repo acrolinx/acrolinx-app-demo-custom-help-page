@@ -33,36 +33,14 @@ const appApi = initApi({
 
 
 function startApp() {
-
-  let linkElementsNew = document.querySelectorAll<HTMLLinkElement>('.normal-link')!;
+  let linkElementsNew = document.querySelectorAll<HTMLLinkElement>('a');
   linkElementsNew.forEach((el) => {
     el.addEventListener(('click'), (ev) => {
       ev.preventDefault();
       ev.stopPropagation();
-      console.log('Here test ' + el.href);
       appApi.commands.openWindow(el.href);
     });
   })
-
-  // let linkElements = document.querySelectorAll('a')!;
-  // linkElements.forEach((el) => {
-  //   el.addEventListener(('click'), (ev) => {
-  //     ev.preventDefault();
-  //     ev.stopPropagation();
-  //     const urlToOpen = el.getAttribute('data-href') as string;
-  //     console.log(urlToOpen);
-  //     appApi.commands.openWindow(urlToOpen);
-  //   });
-  // })
-
-  // let linkDivElements = document.querySelectorAll('.href')!;
-  // linkDivElements.forEach((el) => {
-  //   el.addEventListener(('click'), (ev) => {
-  //     const urlToOpen = el.getAttribute('data-href') as string;
-  //     console.log(urlToOpen);
-  //     appApi.commands.openWindow(urlToOpen);
-  //   });
-  // })
 }
 
 startApp();
