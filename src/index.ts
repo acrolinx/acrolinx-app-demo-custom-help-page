@@ -19,7 +19,7 @@ import packageJson from '../package.json';
 import './index.css';
 
 const appApi = initApi({
-  title: 'Select Ranges',
+  title: 'Help App',
   version: packageJson.version,
 
   button: {
@@ -44,4 +44,3 @@ function startApp() {
 }
 
 startApp();
-console.log('Starting Help App ' + packageJson.version);
