@@ -34,13 +34,14 @@ const appApi = initApi({
 
 function startApp() {
   let linkElementsNew = document.querySelectorAll<HTMLLinkElement>('a');
-  linkElementsNew.forEach((el) => {
+  for (let el of linkElementsNew) {
     el.addEventListener(('click'), (ev) => {
       ev.preventDefault();
       ev.stopPropagation();
       appApi.commands.openWindow(el.href);
     });
-  })
+  }
 }
 
 startApp();
+console.log('Starting Help App ' + packageJson.version);
