@@ -34,11 +34,11 @@ const appApi = initApi({
 
 function startApp() {
   let linkElementsNew = document.querySelectorAll<HTMLLinkElement>('a');
-  for (let el of linkElementsNew) {
-    el.addEventListener(('click'), (ev) => {
+  for (let i=0; i < linkElementsNew.length ; i++) {
+    linkElementsNew[i].addEventListener(('click'), (ev) => {
       ev.preventDefault();
       ev.stopPropagation();
-      appApi.commands.openWindow(el.href);
+      appApi.commands.openWindow(linkElementsNew[i].href);
     });
   }
 }
